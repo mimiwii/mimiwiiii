@@ -117,11 +117,9 @@
             text.className = 'falling-text';
             text.textContent = messages[Math.floor(Math.random() * messages.length)];
             
-            // Add random message size classes
             const sizeClasses = ['message-1', 'message-2', 'message-3', 'message-4', 'message-5'];
             text.classList.add(sizeClasses[Math.floor(Math.random() * sizeClasses.length)]);
             
-            // Random position
             text.style.left = Math.random() * 90 + 'vw';
             text.style.top = '-50px';
             text.style.animationDuration = (Math.random() * 4 + 6) + 's';
@@ -129,7 +127,6 @@
             
             document.body.appendChild(text);
             
-            // Remove after animation
             setTimeout(() => {
                 if (text.parentNode) {
                     text.remove();
@@ -174,12 +171,10 @@
             }, 11000);
         }
 
-        // Start the animations with different intervals for a natural look
         setInterval(createFallingText, 1200);
         setInterval(createFloatingHeart, 2000);
         setInterval(createSimpleHeart, 3000);
 
-        // Create some initial elements
         for(let i = 0; i < 3; i++) {
             setTimeout(createFallingText, i * 400);
         }
